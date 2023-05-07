@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "whoami"
+version = "0.1.0"
+description = "Simple microservice return it's pod ID."
+authors = ["lddtoan <lddtoan@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.95.1"
+uvicorn = {extras = ["standard"], version = "^0.22.0"}
+pytest = "^7.3.1"
+httpx = "^0.24.0"
+
+
+[build-system]
+# Should be the same as `$POETRY_VERSION`:
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
