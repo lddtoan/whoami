@@ -30,7 +30,21 @@ kubectl create namespace whoami
 sh ./deploy.sh
 ```
 
-`deploy.sh` export `docker-env` of Minikube so Docker will know how to build image in Minikube cluster. Then, it build new image name `whoami` using `Dockerfile` and deploy it to cluster using `deployment.yml` manifests. Then, it create load balancer service on port 8000 in cluster using `service.yml`. Finally, it create tunnel to Minikube cluster.
+`deploy.sh` export `docker-env` of Minikube so Docker will know how to build image in Minikube cluster. Then, it build new image name `whoami` using `Dockerfile` and deploy it to cluster using `deployment.yml` manifests. Then, it create load balancer service on port 8000 in cluster using `service.yml`.
+
+### Run
+
+Check pods are up
+
+```
+kubecl get pods
+```
+
+Port forward to cluster service
+
+```
+kubectl port-forward svc/whoami 8000:8000
+```
 
 ### Cleanup
 
